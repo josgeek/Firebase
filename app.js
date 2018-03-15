@@ -9,12 +9,20 @@ firebase.auth().createUserWithEmailAndPassword(email, contrasena)
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  console.log(errorCode);
-  console.log(errorMessage);
+ alert("Correo y/o contraseña invalidos");
 
 });
 
+ alert("Te has registrado correctamente");
+
 }
+
+
+
+
+
+
+
 
 
 
@@ -25,6 +33,74 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
 //Acciones del Login de GOOGLE (Observador)
 $('#google').click(function(){
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then(function(result) {
+    guardarAuto(result.user);
+    // console.log(result.user);
+      // Ocultar boton
+     // $('#mensaje').show();
+     // $("#mensaje").click(function(){
+     //     $("p").show();
+
+       alert("Has iniciado sesión correctamente");
+     });
+
+    });
+
+//Funcion que guarda los datos automaticamente
+function guardarAuto(user){
+  var usuario = {
+    uid:user.uid,
+    nombre:user.displayName,
+    email:user.email,
+    foto:user.photoURL
+  }
+  firebase.database().ref("itsh/"+ user.uid).set(usuario);
+  //Set graba en toda la rama por eso se puso push
+
+
+}
+
+
+//Login Con facebook
+
+var provider = new firebase.auth.FacebookAuthProvider();
+
+
+$('#facebook').click(function(){
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then(function(result) {
+    guardarAuto(result.user);
+    // console.log(result.user);
+      // Ocultar boton
+     // $('#mensaje').show();
+     // $("#mensaje").click(function(){
+     //     $("p").show();
+
+       alert("Has iniciado sesión correctamente");
+     });
+
+    });
+
+//Funcion que guarda los datos automaticamente
+function guardarAuto(user){
+  var usuario = {
+    uid:user.uid,
+    nombre:user.displayName,
+    email:user.email,
+    foto:user.photoURL
+  }
+  firebase.database().ref("itsh/"+ user.uid).set(usuario);
+  //Set graba en toda la rama por eso se puso push
+
+}
+
+//Login Twitter
+var provider = new firebase.auth.TwitterAuthProvider();
+
+$('#twitter').click(function(){
   firebase.auth()
   .signInWithPopup(provider)
   .then(function(result) {
@@ -50,6 +126,5 @@ function guardarAuto(user){
   }
   firebase.database().ref("itsh/"+ user.uid).set(usuario);
   //Set graba en toda la rama por eso se puso push
-
 
 }
