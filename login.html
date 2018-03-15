@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Entrar</title>
+
+</head>
+
+<body class="bg-inverse">
+
+
+
+  <!-- Iniciar Sesion -->
+  <center>
+    <div id="divLogin" class=" espacioDIV col-lg-6">
+
+
+
+      <div id="root" class="jumbotron container">
+
+
+        <h2 class="display-4">Iniciar Sesión / Registrarse</h2>
+        <br />
+        <input type="email" id="correo" class="form-control" placeholder="Correo electronico">
+        <input type="password" id="contrasena" class="form-control" placeholder="Contraseña">
+        <!-- <div class="checkbox">
+           <input type="checkbox" value="remember-me" /> Recordar -->
+        <!-- </div> -->
+        <br>
+        <button class="btn btn-lg btn-primary" >Acceder</button>
+
+        <button onclick="registrarse()" class="btn btn-lg btn-primary">Registrarse</button>
+        <br>
+        <br>
+        <h5 class="display-6">Ingresa con </h5>
+        <br>
+        <button class="btn" type="button">  <img src="img/facebook.png" height="50px"width="50px"></button>
+        <button class="btn" type="button">    <img src="img/twitter.png" height="48px"width="55px"></button>
+        <button id="google" class="btn" type="button"> <img src="img/google.png" height="48px"width="50px"></button>
+
+      </div>
+
+
+
+    </div>
+  </center>
+
+  <!-- jquery -->
+
+      <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+    <!-- Firebase -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBr4cnC1f2KpBRFftjSSkOPniWJTIqHnUc",
+        authDomain: "proyectologin-228fc.firebaseapp.com",
+        databaseURL: "https://proyectologin-228fc.firebaseio.com",
+        projectId: "proyectologin-228fc",
+        storageBucket: "proyectologin-228fc.appspot.com",
+        messagingSenderId: "631099083748"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- Script de de la app-->
+          <script src="app.js"></script>
+
+
+</body>
+
+</html>

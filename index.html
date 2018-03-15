@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Inicia Sesion</title>
+  </head>
+  <body>
+<center>
+
+<div id="cuerpo">
+  <form id="caja">
+    <p>
+    <!-- <label>Nombre(s)</label> -->
+    <input class="input" type="text" placeholder="Nombre" autofocus required></p>
+    <p>
+    <!-- <label>Apellido Paterno</label> -->
+    <input class="input" type="text" placeholder="Apellido Paterno"  required></p>
+    <p>
+    <p>
+    <!-- <label>Apellido Materno</label> -->
+    <input class="input" type="text" placeholder="Apellido Materno"  required></p>
+    <p>
+    <!-- <label>Email</label> -->
+    <input class="input" type="text" placeholder="Correo Electronico"  required></p>
+    <!-- <label>Contraseña</label> -->
+    <input class="input" type="password" placeholder="Contraseña"  required></p>
+    <button class="btn">Registrarse</button>
+  </form>
+</div>
+ </center>
+
+
+ <!-- jquery -->
+     <script
+   src="https://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+   crossorigin="anonymous"></script>
+
+
+<!-- Firebase -->
+   <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+   <script>
+     // Initialize Firebase
+     var config = {
+       apiKey: "AIzaSyBr4cnC1f2KpBRFftjSSkOPniWJTIqHnUc",
+       authDomain: "proyectologin-228fc.firebaseapp.com",
+       databaseURL: "https://proyectologin-228fc.firebaseio.com",
+       projectId: "proyectologin-228fc",
+       storageBucket: "",
+       messagingSenderId: "631099083748"
+     };
+     firebase.initializeApp(config);
+   </script>
+
+<!-- Script de Jquery -->
+   <script src="app.js"></script>
+
+
+  </body>
+</html>
